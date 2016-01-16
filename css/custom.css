@@ -1,0 +1,38 @@
+body{
+}
+
+.bgm-head-main{
+	background: url('../images/bg-head-main.jpg');
+	height: 200px;
+	background-position: center center;
+    background-size: cover;
+}
+
+.icon{
+	max-width: 150px;
+	margin: 0 auto;
+	display: block;
+}
+
+.sections section{
+	text-align: center;
+	transition: all 500ms ease-in-out ;
+}
+
+
+@media(min-width: 1200px){
+	.icon{
+		max-width: 100%;
+	}
+	h3{
+		margin-top: 0px;
+	}
+	.sections section{
+		text-align: left;
+		margin-bottom: 10px;
+	}
+}
+
+input, button, textarea, select{
+	/*border-radius: 0px !important;*/
+}
