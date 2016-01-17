@@ -47,13 +47,43 @@ $(function(){
 			
 		}
 	}
-	// 	heading_small
-// 	$('#heading_small').start_spinwriter({
-// 		'text' : "Welcome to spinner text jQuery plugin.",
-// 		'interval' : 10,//milliseconds
-// 		'css' : {
-// 		}
-// 	});
+	
+	var d = [];
+	d[3] = "A la pregunta tonta, '¿Por qué yo?' el cosmos apenas molesta para devolver la respuesta, '¿Por qué no?'.";
+	d[2] = "Pocos son los que ven con sus propios ojos y sienten con sus propios corazones.";
+	d[1] = "Si las cosas buenas duraron para siempre, podríamos apreciar lo precioso que son?";
+
+	$('#d1').start_spinwriter({
+		'text' : d[1],
+		'interval' : 10,//milliseconds
+		'css' : {
+    		'transition': 'all 0.25s ease',
+    		'-webkit-transition': 'all 0.25s ease',
+    		'-moz-transition': 'all 0.25s ease',
+    		'-o-transition':'all 0.25s ease'
+		}
+	});
+	$('#d2').start_spinwriter({
+		'text' : d[2],
+		'interval' : 15,//milliseconds
+		'css' : {
+    		'transition': 'all 0.25s ease',
+    		'-webkit-transition': 'all 0.25s ease',
+    		'-moz-transition': 'all 0.25s ease',
+    		'-o-transition':'all 0.25s ease'
+		}
+	});
+	$('#d3').start_spinwriter({
+		'text' : d[3],
+		'interval' : 5,//milliseconds
+		'css' : {
+    		'transition': 'all 0.25s ease',
+    		'-webkit-transition': 'all 0.25s ease',
+    		'-moz-transition': 'all 0.25s ease',
+    		'-o-transition':'all 0.25s ease'
+		}
+	});
+
 
 });
 
