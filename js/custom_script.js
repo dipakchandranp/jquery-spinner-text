@@ -48,20 +48,20 @@ $(function(){
 		if( i < 15){
 			$('#t'+i).start_spinwriter({
 				'text' : t[i],
-				'interval':2,
+				'interval':.11,
 				'css':{}
 			},function(){
 				i = i + 1;
 				load_texts(i);
 			});
 		}else{
-			setTimeout(function(){
-				$('pre>span').html('');
-				$('pre>p').html('');
-				load_texts(1);
+			//setTimeout(function(){
+				//$('pre>span').html('');
+				//$('pre>p').html('');
+				//load_texts(1);
+				bg_writer();
 				number_runner();		
-			},100000)
-			
+			//},100000)
 		}
 	}
 	
@@ -101,6 +101,30 @@ $(function(){
 		}
 	});
 
+	function getRandomChr(){
+	 	var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';	
+		return chars[Math.floor(Math.random() * chars.length)];
+	}
 
+	function getRandomString(){
+		var cwid = 7, chig = 20;
+		var wwid = window.innerWidth, whig = $(document).height();
+		var nchr = wwid/(2*cwid), nr = whig/chig;
+		var tot = nchr*nr;
+		var str = "";
+		for(var i=0; i<tot; i++){
+			str = str + getRandomChr()+" ";	
+		}
+		return str;	
+	}
+
+	// fill body bg
+	function bg_writer(){
+		$('#absbg').start_spinwriter({
+			'text':getRandomString(),
+			'interval':.0021,
+			'css':{}	
+		});
+	}
 });
 
