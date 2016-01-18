@@ -1,5 +1,7 @@
 $(function(){
-	var heading = "jQuery Spinner Text.JS";
+	
+	var heading = "jQuery Spinner Text.v.JS";
+	var release_text = "updated to include numerics[0-9] values v0.1.1"
 	t = [15];
 	t[1] = "&lt!-- load jquery plugin --&gt;",
 	t[2] = '&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;',
@@ -16,11 +18,25 @@ $(function(){
 	t[13] = '  }',
 	t[14] = ' });';
 
+	$("#notification").start_spinwriter({
+		'text':release_text,
+		'interval': 50,
+		'css':{}	
+	});
+	
+	number_runner();
+	function number_runner(){
+		$('#ndemo').start_spinwriter({
+			'text':'0 1 2 3 4 5 6 7 8 9',
+			'interval': 200,
+			'css':{}	
+		});
+	}
 
 	// Initiate plugin
 	$('#heading').start_spinwriter({
 		'text' : heading,
-		'interval' : 10,//milliseconds
+		'interval' : 11,//milliseconds
 		'css' : {
     		'color':'#333'
 		}
@@ -42,7 +58,8 @@ $(function(){
 			setTimeout(function(){
 				$('pre>span').html('');
 				$('pre>p').html('');
-				load_texts(1);		
+				load_texts(1);
+				number_runner();		
 			},100000)
 			
 		}
