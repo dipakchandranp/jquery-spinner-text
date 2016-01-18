@@ -6,9 +6,15 @@
 		<title>Spinner Text</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">		
+		<style>
+			.dropmtshadow{
+				box-shadow : 0px 0px 1px 1px rgba(0, 0, 0, .11);	
+			}
+		</style>
 	</head>
 
 	<body>
+		<div id="absbg" style="z-index:-4;position: absolute;width: 100%;height: 100%;color: #eee;"></div>
 		<div class="container">
 			
 			<div class="row text-center " style="min-height:125px;">
@@ -17,8 +23,8 @@
 			
 			<div class="row text-center">
 				<div class="col-xs-12">
-					<kbd id="notification"></kbd><br/>
-					<kbd id="ndemo" style="font-size:50px;"></kdb>
+					<kbd id="notification" class="dropmtshadow"></kbd><br/>
+					<kbd id="ndemo" class="dropmtshadow" style="font-size:50px;background-color:rgba(51, 51, 51, 0.74);"></kdb>
 				</div>
 			</div>
 
@@ -29,7 +35,7 @@
 				</div>
 				<div class="col-xs-12">
 					
-					<pre><span id="t1"></span>
+					<pre style="background-color:rgba(0,0, 0, 0.5);" class="dropmtshadow"><span id="t1"></span>
 <span id="t2"></span><p id="t3"></p><p id="t4"></p><p id="t5"></p>
 <p id="t6"></p><p id="t7"></p><p id="t8"></p><p id="t9"></p><p id="t10"></p><p id="t11"></p><p id="t12"></p><p id="t13"></p><p id="t14"></p></pre>
 
@@ -52,19 +58,19 @@
 				<div class="col-xs-12">
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 text-center">
-					<div class=" text-danger thumbnail">
+					<div class=" text-danger thumbnail dropmtshadow">
 						<div class="h1" id="d1">AT INTERVAL 1000 milliseconds.</div>
 					</div>
 					<pre>'interval' : 10</pre>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 text-center ">
-					<div class=" text-warning thumbnail">
+					<div class=" text-warning thumbnail dropmtshadow">
 						<div class="h1" id="d2">AT INTERVAL 1000 milliseconds.</div>
 					</div>
 					<pre>'interval' : 15</pre>
 				</div>
 				<div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-0 col-md-4 text-center">
-					<div class=" text-success thumbnail">
+					<div class=" text-success thumbnail dropmtshadow">
 						<div class="h1" id="d3">AT INTERVAL 1000 milliseconds.</div>
 					</div>
 					<pre>'interval' : 5</pre>
