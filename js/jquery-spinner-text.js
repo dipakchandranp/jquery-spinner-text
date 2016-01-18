@@ -25,15 +25,21 @@
 	load_current_character = function(ele,str,posi, text,index,interval,callback){
 		if(str.length > 0){
 			var alphabet = " abcdefghijklmnopqrstuvwxyz".split("");
+			var number = "0123456789".split("")
 			pt = /[a-zA-Z]/;
+			ptn = /[0-9]/;
 			var main_str = str.substr(0,str.length-1);
 			var running_charecter = str[str.length-1];
-			if(!pt.test(running_charecter) || alphabet[posi].toLowerCase() == running_charecter.toLowerCase()){
+			if((!pt.test(running_charecter) || alphabet[posi].toLowerCase() == running_charecter.toLowerCase()) && (!ptn.test(running_charecter) || number[posi] === running_charecter)){
 				ele.html(str);
 				index = index + 1;
 				write_next_char(ele,text,index,interval,callback);
 			}else{
-				ele.html(main_str+alphabet[posi]);	
+				if(isNaN(parseInt(running_charecter))){
+					ele.html(main_str+alphabet[posi]);	
+				}else{
+					ele.html(main_str+number[posi]);	
+				}
 				setTimeout(function(){
 					posi = posi + 1;
 					load_current_character(ele,str,posi,text,index,interval,callback);
