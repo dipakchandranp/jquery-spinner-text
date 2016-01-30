@@ -3,87 +3,277 @@
 
 <html>
 	<head>
-		<title>Spinner Text</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">		
-		<style>
-			.dropmtshadow{
-				box-shadow : 0px 0px 1px 1px rgba(0, 0, 0, .11);	
+		<title>jSpinnerText</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/materialdesignicons.min.css"  media="screen,projection"/>
+      	<link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      	<style type="text/css">
+      		@font-face {
+			  font-family: 'Material Icons';
+			  font-style: normal;
+			  font-weight: 400;
+			  src: local('Material Icons'), local('MaterialIcons-Regular'), url(http://fonts.gstatic.com/s/materialicons/v11/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
 			}
-		</style>
-	</head>
 
-	<body>
-		<div id="absbg" style="z-index:-4;position: absolute;width: 100%;height: 100%;color: #eee;"></div>
-		<div class="container">
-			
-			<div class="row text-center " style="min-height:125px;">
-				<a href="http://dipakchandranp.github.io/jquery-spinner-text/"><div class="col-xs-12 h1" id="heading" ></div></a>
-			</div>
-			
-			<div class="row text-center">
-				<div class="col-xs-12">
-					<kbd id="notification" class="dropmtshadow"></kbd><br/>
-					<kbd id="ndemo" class="dropmtshadow" style="font-size:50px;background-color:rgba(51, 51, 51, 0.74);"></kdb>
-				</div>
-			</div>
+			.material-icons {
+			  font-family: 'Material Icons';
+			  font-weight: normal;
+			  font-style: normal;
+			  font-size: 24px;
+			  line-height: 1;
+			  letter-spacing: normal;
+			  text-transform: none;
+			  display: inline-block;
+			  white-space: nowrap;
+			  word-wrap: normal;
+			  direction: ltr;
+			  -webkit-font-feature-settings: 'liga';
+			  -webkit-font-smoothing: antialiased;
+			}
+      	</style>
+    </head>
 
-			<div class="row">
-				<div class="col-xs-12 h2">
-					<span class="glyphicon glyphicon-pencil"></span>
-					<span>How to use it: </span>
+    <body class="">
+    	<div class="container">
+			<div class="row teal lighten-2">
+				<div class="col s12">
+					<h2 id="heading" class="thin center-align">jQuery Spinner Text</h2>
 				</div>
-				<div class="col-xs-12">
-					
-					<pre style="background-color:rgba(0,0, 0, 0.5);" class="dropmtshadow"><span id="t1"></span>
-<span id="t2"></span><p id="t3"></p><p id="t4"></p><p id="t5"></p>
-<p id="t6"></p><p id="t7"></p><p id="t8"></p><p id="t9"></p><p id="t10"></p><p id="t11"></p><p id="t12"></p><p id="t13"></p><p id="t14"></p></pre>
+			</div>
+			<div class="divider"></div>
+			<div class="row section  teal lighten-1">
+			  <div class="col s12">
+				<h2  class="header white-text center-align">Getting Started</h2>
+				<h4 class="light white-text text-lighten-4 center-align">Learn how to easily start using jQuery Spinner Text in your website.</h4>
+			  </div>
+		  	</div>
+		  	<div class="divider"></div>
+		  	<div class="row">
+		  		<div class="section col s12">
+		  			<h4>1. Download</h4>
+		  			<p>Only the unminified JavaScript file is availabel right now. This option requires little to no setup.</p>
+		  			<a class="btn waves-effect waves-purple" href="js/jquery-spinner-text.js">
+		  				jQuery Spinner Text
+		  				<i class="material-icons right">file_download</i>
+		  			</a>
+		  		</div>
+		  		<div class="section col s12">
+		  			<h4>2. HTML Setup</h4>
+		  			<p>Next you just have to make sure you link the files properly in your webpage. Generally it is wise to import javascript files at the end of the body to reduce page load time. Follow the example below on how to import jQuery Spinner Text into your webpage.</p>
+		  			<p> One last thing to note is that you have to import jQuery before importing jquery-spinner-text.js!</p>
+		  			<pre class=" language-markup amber lighten-5"><code class=" language-markup">
+<span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+      <span class="token comment" spellcheck="true">&lt;!--Import your header content --&gt;</span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
 
-				</div>
-			</div>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+      <span class="token comment" spellcheck="true">&lt;!-- HTML element into which spinner text to be loader --&gt;</span>
+      <span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spinner-text-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--Import jQuery before jquery-spinner-text.js--&gt;</span>
+      <span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://code.jquery.com/jquery-2.1.1.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+      <span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js/jquery-spinner-text.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+		  		</div>
+		  		<div class="section col s12">
+		  			<h4>3. JavaScript Setup</h4>
+		  			<p>Now call the spinner text initializer function (<b>start_spinwriter</b>) and your live text is ready.</p>
+		  			<pre class=" language-markup amber lighten-5"><code class=" language-markup">
+ <span class="token punctuation">$(<span class="token tag">document</span>).<span class="token tag">ready</span>(<span class="token tag">function</span>() {</span>
+    <span class="token punctuation">$(<span class="token attr-name">"#spinner-text-container"</span>).start_spinwriter();</span></span>
+ <span class="token punctuation">});</span>
 
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<a target="_blank"" href="https://raw.githubusercontent.com/dipakchandranp/jquery-spinner-text/master/js/jquery-spinner-text.js"
-						class="btn btn-md btn-success">
-					<span class="glyphicon glyphicon-save"></span>
-					 Download jQuery Spinner Text.JS</a>
+</code></pre>
+		  			<p>All of the options below are available to customize Spinner Text.</p>
+		  			<table class="highlight bordered striped">
+						<thead class="hide-on-small-only">
+						  <tr>
+							  <th data-field="id">Property</th>
+							  <th data-field="name">Default</th>
+							  <th data-field="price">Type</th>
+							  <th data-field="price">Description</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td><span class="hide-on-med-and-up"><b>Property:</b></span>text</td>
+							<td><span class="hide-on-med-and-up"><b>Value:</b></span>Empty</td>
+							<td><span class="hide-on-med-and-up"><b>Type:</b></span>text/html</td>
+							<td><span class="hide-on-med-and-up"><b>Description:</b></span>A string value which will be loaded into the spinner text initialized element as html.</td>
+						  </tr>
+						  <tr>
+							<td><span class="hide-on-med-and-up"><b>Property:</b></span>interval</td>
+							<td><span class="hide-on-med-and-up"><b>Value:</b></span>10</td>
+							<td><span class="hide-on-med-and-up"><b>Type:</b></span>int</td>
+							<td><span class="hide-on-med-and-up"><b>Description:</b></span>Time interval between the change of text/character to the actual text/character.</td>
+						  </tr>
+						  <tr>
+							<td><span class="hide-on-med-and-up"><b>Property:</b></span>css</td>
+							<td><span class="hide-on-med-and-up"><b>Value:</b></span>Empty</td>
+							<td><span class="hide-on-med-and-up"><b>Type:</b></span>json</td>
+							<td><span class="hide-on-med-and-up"><b>Description:</b></span>CSS to apply to the element before appending the text.</td>
+						  </tr>
+						  <tr>
+							<td><span class="hide-on-med-and-up"><b>Property:</b></span>mode</td>
+							<td><span class="hide-on-med-and-up"><b>Value:</b></span>0</td>
+							<td><span class="hide-on-med-and-up"><b>Type:</b></span>int</td>
+							<td><span class="hide-on-med-and-up"><b>Description:</b></span><b>mode:0</b> Character wise incremental manner to construct word. <b>mode:1</b> Whole text given will be processed together in incremental manner.</td>
+						  </tr>
+						  <tr>
+							<td>callback</td>
+							<td>Empty</td>
+							<td>function</td>
+							<td>After update callback.</td>
+						  </tr>
+						</tbody>
+					<table>
+		  		</div>
+		  	</div>
+		  	<br/>
+		  	<div class="row">
+				<div class="col s12  pink darken-4">
+					<h2 class="thin left-align white-text">Showcase</h2>
 				</div>
-			</div>
-			<div class="row">
-				<br/>
-			</div>
-			<div class="row">
-				<div class="h1 text-center text-info">DEMOS</div>
-				<div class="col-xs-12">
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 text-center">
-					<div class=" text-danger thumbnail dropmtshadow">
-						<div class="h1" id="d1">AT INTERVAL 1000 milliseconds.</div>
+				<div class="row"></div>
+				<div class="row center-align">
+					<div class="col s12">
+  						<a class="waves-effect waves-purple btn modal-trigger" href="#demo1">demo 1</a>
+  						<a class="waves-effect waves-purple btn modal-trigger" href="#demo2">demo 2</a>
+  						<a class="waves-effect waves-purple btn modal-trigger" href="#demo3">demo 3</a>
+  						<a class="waves-effect waves-purple btn modal-trigger" href="#demo4">demo 4</a>
 					</div>
-					<pre>'interval' : 10</pre>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 text-center ">
-					<div class=" text-warning thumbnail dropmtshadow">
-						<div class="h1" id="d2">AT INTERVAL 1000 milliseconds.</div>
-					</div>
-					<pre>'interval' : 15</pre>
-				</div>
-				<div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-0 col-md-4 text-center">
-					<div class=" text-success thumbnail dropmtshadow">
-						<div class="h1" id="d3">AT INTERVAL 1000 milliseconds.</div>
-					</div>
-					<pre>'interval' : 5</pre>
 				</div>
 			</div>
-			<div class="row">
-				<br/>
+		  	<div class="divider"></div>
+		  	<h5 class="center">
+				<a href="https://github.com/dipakchandranp" ><i class="mdi mdi-github-circle white"></i></a>
+				<a href="https://in.linkedin.com/in/dipakchandranp" ><i class="mdi mdi-linkedin white"></i></a>
+				<a href="http://stackoverflow.com/users/1823740/dipak-chandran-p" ><i class="mdi mdi-stackoverflow white"></i></a>
+				<a href="https://web.facebook.com/dipak.c.p.5" ><i class="mdi mdi-facebook white"></i></a>
+				<a href="https://twitter.com/piccaza_de" ><i class="mdi mdi-twitter white"></i></a>
+		  	</h5>
+    	</div>
+
+		<div id="demo1" class="modal modal-fixed-footer">
+			<div class="modal-content">
+			  <h5>Simple Spinner Text</h5>
+			  <p><b>SETUP</b></p>
+			  <pre class=" language-markup amber lighten-5"><code class=" language-markup">
+ <span class="token comment" spellcheck="true">&lt;!-- HTML element into which spinner text to be loader --&gt;</span>
+ <span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spinner-text-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+ <span class="token comment" spellcheck="true">&lt;!-- Plugin initializer --&gt;</span>
+ <span class="token punctuation">$(<span class="token tag">document</span>).<span class="token tag">ready</span>(<span class="token tag">function</span>() {</span>
+    <span class="token punctuation">$(<span class="token attr-name">"#spinner-text-container"</span>).start_spinwriter({</span></span>
+	<span class="token punctuation">'<span class="token attr-name">text</span>':'<span class="token attr-name">Simple Spinner Text</span>'</span>
+    <span class="token punctuation">});</span>
+ <span class="token punctuation">});</span>
+
+</code></pre>
+			<div id="demo_1" class="center">
+			</div>
+			</div>
+			<div class="modal-footer">
+			  	<button href="#!" class="modal-action modal-close waves-effect red darken-4 waves-light btn right">Close</button>&nbsp;
+			  	<button data-element-id="demo_1" href="#!" class="waves-effect waves-purple btn left">Run</button>
 			</div>
 		</div>
+        <!-- 1 -->
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery-spinner-text.js"></script>
-		<script src="js/custom_script.js"></script>
-	</body>
+
+
+
+		<div id="demo2" class="modal modal-fixed-footer">
+			<div class="modal-content">
+			  <h5>Text with interval 100ms</h5>
+			  <p><b>SETUP</b></p>
+			  <pre class=" language-markup amber lighten-5"><code class=" language-markup">
+ <span class="token comment" spellcheck="true">&lt;!-- HTML element into which spinner text to be loader --&gt;</span>
+ <span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spinner-text-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+ <span class="token comment" spellcheck="true">&lt;!-- Plugin initializer --&gt;</span>
+ <span class="token punctuation">$(<span class="token tag">document</span>).<span class="token tag">ready</span>(<span class="token tag">function</span>() {</span>
+    <span class="token punctuation">$(<span class="token attr-name">"#spinner-text-container"</span>).start_spinwriter({</span></span>
+	<span class="token punctuation">'<span class="token attr-name">text</span>':'<span class="token attr-name">Text with interval 100ms</span>',</span>
+	<span class="token punctuation">'<span class="token attr-name">interval</span>':<span class="token attr-name">100</span></span>
+    <span class="token punctuation">});</span>
+ <span class="token punctuation">});</span>
+
+</code></pre>
+			<div id="demo_2" class="center">
+			</div>
+			</div>
+			<div class="modal-footer">
+			  	<button href="#!" class="modal-action modal-close waves-effect red darken-4 waves-light btn right">Close</button>&nbsp;
+			  	<button data-element-id="demo_2" href="#!" class="waves-effect waves-purple btn left">Run</button>
+			</div>
+		</div>
+        <!-- 2 -->
+
+
+
+
+		<div id="demo3" class="modal modal-fixed-footer">
+			<div class="modal-content">
+			  <h5>HTML mixed text content</h5>
+			  <p><b>SETUP</b></p>
+			  <pre class=" language-markup amber lighten-5"><code class=" language-markup">
+ <span class="token comment" spellcheck="true">&lt;!-- HTML element into which spinner text to be loader --&gt;</span>
+ <span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spinner-text-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+ <span class="token comment" spellcheck="true">&lt;!-- Plugin initializer --&gt;</span>
+ <span class="token punctuation">$(<span class="token tag">document</span>).<span class="token tag">ready</span>(<span class="token tag">function</span>() {</span>
+    <span class="token punctuation">$(<span class="token attr-name">"#spinner-text-container"</span>).start_spinwriter({</span></span>
+	<span class="token punctuation">'<span class="token attr-name">text</span>':'<span class="token attr-name">&lt;b&gt;Bolded&lt;/b&gt; Text</span>'</span>
+    <span class="token punctuation">});</span>
+ <span class="token punctuation">});</span>
+
+</code></pre>
+			<div id="demo_3" class="center">
+			</div>
+			</div>
+			<div class="modal-footer">
+			  	<button href="#!" class="modal-action modal-close waves-effect red darken-4 waves-light btn right">Close</button>&nbsp;
+			  	<button data-element-id="demo_3" href="#!" class="waves-effect waves-purple btn left">Run</button>
+			</div>
+		</div>
+        <!-- 3 -->
+
+
+
+
+		<div id="demo4" class="modal modal-fixed-footer">
+			<div class="modal-content">
+			  <h5>Whole text loading together : mode 1</h5>
+			  <p><b>SETUP</b></p>
+			  <pre class=" language-markup amber lighten-5"><code class=" language-markup">
+ <span class="token comment" spellcheck="true">&lt;!-- HTML element into which spinner text to be loader --&gt;</span>
+ <span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spinner-text-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>
+ <span class="token comment" spellcheck="true">&lt;!-- Plugin initializer --&gt;</span>
+ <span class="token punctuation">$(<span class="token tag">document</span>).<span class="token tag">ready</span>(<span class="token tag">function</span>() {</span>
+    <span class="token punctuation">$(<span class="token attr-name">"#spinner-text-container"</span>).start_spinwriter({</span></span>
+	<span class="token punctuation">'<span class="token attr-name">text</span>':'<span class="token attr-name">your text here</span>',</span>
+	<span class="token punctuation">'<span class="token attr-name">interval</span>':<span class="token attr-name">50</span></span>
+	<span class="token punctuation">'<span class="token attr-name">mode</span>':<span class="token attr-name">1</span></span>
+    <span class="token punctuation">});</span>
+ <span class="token punctuation">});</span>
+
+</code></pre>
+			<div id="demo_4" class="center">
+			</div>
+			</div>
+			<div class="modal-footer">
+			  	<button href="#!" class="modal-action modal-close waves-effect red darken-4 waves-light btn right">Close</button>&nbsp;
+			  	<button data-element-id="demo_4" href="#!" class="waves-effect waves-purple btn left">Run</button>
+			</div>
+		</div>
+        <!-- 4 -->
+
+
+      	<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/jquery-spinner-text.js"></script>
+		<script type="text/javascript" src="js/custom_script.js"></script>
+    </body>
 </html>
